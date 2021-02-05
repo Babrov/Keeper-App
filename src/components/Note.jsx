@@ -1,10 +1,14 @@
 import React from 'react';
+import DeleteIcon from '@material-ui/icons/Delete';
 
-const Note = () => {
+const Note = ({ title, content, id, onRemove }) => {
   return (
-    <div className="note">
-      <h1>This is the note title</h1>
-      <p>This is the note content</p>
+    <div className="note" id={id}>
+      <h1>{title}</h1>
+      <p>{content}</p>
+      <button onClick={() => onRemove(id)}>
+        <DeleteIcon />
+      </button>
     </div>
   );
 };
